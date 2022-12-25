@@ -13,7 +13,8 @@ export default function restaurantDetailInfo({ restaurantDetailInfo }) {
 }
 
 export async function getServerSideProps({ params }) {
-  const id = params.post;
+  console.log(params);
+  const id = params.detailInfo;
   const apiBaseUrl = process.env.API_URL_ROOT;
   const res = await fetch(`${apiBaseUrl}&id=${id}`);
   const restaurantDetailInfo = await res.json();

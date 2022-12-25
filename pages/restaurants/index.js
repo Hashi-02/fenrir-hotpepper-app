@@ -7,7 +7,7 @@ export default function index({ restaurants }) {
         {restaurants.results.shop.map((restaurant) => {
           return (
             <li key={restaurant.id}>
-              <Link href={`/restaurants/${restaurant.id}`}>
+              <Link href={`/restaurants/detail/${restaurant.id}`}>
                 {restaurant.name}
               </Link>
             </li>
@@ -18,13 +18,16 @@ export default function index({ restaurants }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  // console.log(context);
+  const lat = context.query.lat;
+  const lng = context.query.lng;
+  const range = context.query.range;
+  // console.log(lat, lng, range);
   const apiBaseUrl = process.env.API_URL_ROOT;
-  const res = await fetch(
-    `${apiBaseUrl}&lat=34.7466029&lng=135.4960054&range=3`
-  );
-
+  const res = await fetch(`${apiBaseUrl}&lat=${lat}&lng=${lng}&range=${range}`);
   const restaurants = await res.json();
-  console.log(restaurants.results.shop);
+  console.log(`${apiBaseUrl}&lat=${lat}&lng=${lng}&range=${range}`);
+  console.log(restaurants.results);
   return { props: { restaurants } };
 }
