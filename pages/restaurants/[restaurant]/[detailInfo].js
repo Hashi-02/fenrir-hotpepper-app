@@ -13,12 +13,11 @@ export default function restaurantDetailInfo({ restaurantDetailInfo }) {
 }
 
 export async function getServerSideProps({ params }) {
-  console.log(params);
   const id = params.detailInfo;
   const apiBaseUrl = process.env.API_URL_ROOT;
   const res = await fetch(`${apiBaseUrl}&id=${id}`);
   const restaurantDetailInfo = await res.json();
-  console.log(restaurantDetailInfo.results.shop[0]);
+
   if (!Object.keys(restaurantDetailInfo).length) {
     return {
       notFound: true,
