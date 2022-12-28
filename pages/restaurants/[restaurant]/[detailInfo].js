@@ -1,13 +1,31 @@
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 export default function restaurantDetailInfo({ restaurantDetailInfo }) {
+  const router = useRouter();
+  const shop = {
+    name: restaurantDetailInfo.results.shop[0].name,
+    address: restaurantDetailInfo.results.shop[0].address,
+    businessHours: restaurantDetailInfo.results.shop[0].open,
+    picSrc: restaurantDetailInfo.results.shop[0].photo.pc.l,
+  };
+  // console.log(restaurantDetailInfo);
   return (
     <div>
-      <h1>
-        restaurantDetailInfo(投稿){restaurantDetailInfo.results.shop[0].id}
-      </h1>
-      <h2>{restaurantDetailInfo.results.shop[0].name}</h2>
-      <p>{restaurantDetailInfo.results.shop[0].mobile_access}</p>
-      <p>{restaurantDetailInfo.results.shop[0].open}</p>
-      <p>{restaurantDetailInfo.results.shop[0].photo.pc.l}</p>
+      <div>
+        <button alia-label="戻る" type="button" onClick={() => router.back()}>
+          戻る
+        </button>
+      </div>
+      <h1>restaurantDetailInfo</h1>
+      <h2>{shop.name}</h2>
+      <p>{shop.address}</p>
+      <p>{shop.businessHours}</p>
+      <Image
+        src={shop.picSrc}
+        alt="Picture of the author"
+        width={200}
+        height={200}
+      />
     </div>
   );
 }
