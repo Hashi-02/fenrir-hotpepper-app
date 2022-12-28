@@ -1,6 +1,6 @@
 import React from 'react';
-import BackButton from '../../../molecules/BackButton';
-import DetailInfo from '../../../molecules/DetailInfo';
+import BackButton from '../../../atoms/BackButton';
+import DetailInfo from '../../../atoms/DetailInfo';
 
 export const DetailInfoData = React.createContext();
 

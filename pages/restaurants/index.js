@@ -1,5 +1,5 @@
 import React from 'react';
-import PageNation from '../../molecules/PageNation';
+import PageNation from '../../atoms/PageNation';
 import RestaurantList from '../../molecules/RestaurantList';
 
 export const PageNationData = React.createContext();

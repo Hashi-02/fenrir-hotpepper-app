@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Selector from '../molecules/Selector';
-import SearchRequest from '../molecules/SearchRequest';
+import Selector from '../atoms/Selector';
+import SearchRequest from '../atoms/SearchRequest';
 import { useContext } from 'react';
 
 const options = [
@@ -30,6 +30,9 @@ export default function Header() {
 
   return (
     <div>
+      <RangeData.Provider value={RangeDataValue}>
+        <Selector />
+      </RangeData.Provider>
       <div>
         <SearchRequestData.Provider value={SearchRequestDataValue}>
           <SearchRequest />
@@ -40,10 +43,6 @@ export default function Header() {
           </>
         )}
       </div>
-
-      <RangeData.Provider value={RangeDataValue}>
-        <Selector />
-      </RangeData.Provider>
     </div>
   );
 }
