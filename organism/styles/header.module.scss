@@ -1,0 +1,22 @@
+.wrapper {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  padding: 10px 40px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 10px 25px 0 rgba(220, 220, 220, 0.5);
+
+  box-sizing: border-box;
+}
+.inner {
+  margin: 0 auto;
+  width: 1080px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.serchers {
+  display: flex;
+  margin: 0 0 0 auto;
+}

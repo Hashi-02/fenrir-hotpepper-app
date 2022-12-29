@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  border-top: 1px solid rgb(221, 221, 221);
+  margin: 10px 0px;
+  .img {
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  .name {
+    color: rgb(59, 59, 59);
+    margin: 0;
+    width: 850px;
+    word-wrap: break-word;
+    &:hover {
+      color: #eb6100;
+    }
+  }
+  .access {
+    font-size: large;
+    color: rgb(59, 59, 59);
+    margin: 0;
+    width: 850px;
+    word-wrap: break-word;
+  }
+}

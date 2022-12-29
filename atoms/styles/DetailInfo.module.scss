@@ -1,0 +1,18 @@
+.wrapper {
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+  .img {
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}

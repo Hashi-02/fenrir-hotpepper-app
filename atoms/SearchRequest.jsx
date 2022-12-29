@@ -2,9 +2,11 @@ import React from 'react';
 import { useContext } from 'react';
 import { SearchRequestData } from '../organism/header';
 import { useRouter } from 'next/router';
+import styles from './styles/SearchRequest.module.scss';
 
 const SearchRequest = () => {
-  const { setIsLoading, selectedValue } = useContext(SearchRequestData);
+  const { isLoading, setIsLoading, selectedValue } =
+    useContext(SearchRequestData);
   const router = useRouter();
   const getCurrentPosition = () => {
     setIsLoading(true);
@@ -23,7 +25,11 @@ const SearchRequest = () => {
       });
     });
   };
-  return <button onClick={getCurrentPosition}>検索する</button>;
+  return (
+    <button className={styles.button} onClick={getCurrentPosition}>
+      {isLoading ? <p>検索中</p> : <p>検索する</p>}
+    </button>
+  );
 };
 
 export default SearchRequest;

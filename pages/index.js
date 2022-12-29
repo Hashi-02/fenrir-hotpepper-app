@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      <h1>レストラン一覧</h1>
+      <h1>周辺のレストラン</h1>
     </div>
   );
 }

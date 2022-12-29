@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Selector from '../atoms/Selector';
 import SearchRequest from '../atoms/SearchRequest';
-import { useContext } from 'react';
+import styles from './styles/header.module.scss';
 
 const options = [
   { value: 1, label: '300m' },
@@ -29,19 +29,21 @@ export default function Header() {
   };
 
   return (
-    <div>
-      <RangeData.Provider value={RangeDataValue}>
-        <Selector />
-      </RangeData.Provider>
-      <div>
-        <SearchRequestData.Provider value={SearchRequestDataValue}>
-          <SearchRequest />
-        </SearchRequestData.Provider>
-        {isLoading && (
-          <>
-            <div>Loading...</div>
-          </>
-        )}
+    <div className={styles.wrapper}>
+      <div className={styles.inner}>
+        <div>
+          <h3>GPSグルメサーチ</h3>
+        </div>
+        <div className={styles.serchers}>
+          <RangeData.Provider value={RangeDataValue}>
+            <Selector />
+          </RangeData.Provider>
+          <div>
+            <SearchRequestData.Provider value={SearchRequestDataValue}>
+              <SearchRequest />
+            </SearchRequestData.Provider>
+          </div>
+        </div>
       </div>
     </div>
   );

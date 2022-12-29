@@ -1,7 +1,7 @@
 import React from 'react';
-import BackButton from '../../../molecules/BackButton';
+import BackButton from '../../../atoms/BackButton';
 import DetailInfo from '../../../atoms/DetailInfo';
-
+import style from './styles/detailInfo.module.scss';
 export const DetailInfoData = React.createContext();
 
 export default function restaurantDetailInfo({ restaurantDetailInfo }) {
@@ -16,13 +16,15 @@ export default function restaurantDetailInfo({ restaurantDetailInfo }) {
   };
   // console.log(restaurantDetailInfo);
   return (
-    <div>
+    <div className={style.wrapper}>
       <div>
         <BackButton />
       </div>
-      <DetailInfoData.Provider value={DetailInfoDataValue}>
-        <DetailInfo />
-      </DetailInfoData.Provider>
+      <div>
+        <DetailInfoData.Provider value={DetailInfoDataValue}>
+          <DetailInfo />
+        </DetailInfoData.Provider>
+      </div>
     </div>
   );
 }
