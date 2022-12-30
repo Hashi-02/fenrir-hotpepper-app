@@ -7,6 +7,10 @@ export default function App({ Component, pageProps }) {
     <div>
       <Head>
         <title>GPSグルメサーチ</title>
+        <meta
+          property="description"
+          content="GPS グルメリサーチアプリです。 || This is GPS gourmet Research Appliation"
+        />
         <meta property="og:title" content="GPS gourmet Research Appliation" />
         <meta
           property="og:description"
