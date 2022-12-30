@@ -25,3 +25,36 @@
     word-wrap: break-word;
   }
 }
+@media screen and (max-width: 519px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid rgb(221, 221, 221);
+    margin: 0 auto;
+    .img {
+      border-radius: 20px;
+      margin-right: 0px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    .name {
+      color: rgb(59, 59, 59);
+      margin: 0;
+      width: 300px;
+      line-height: 30px;
+      word-wrap: break-word;
+      &:hover {
+        color: #eb6100;
+      }
+    }
+    .access {
+      font-size: large;
+      color: rgb(59, 59, 59);
+      margin: 0;
+      line-height: 20px;
+      width: 300px;
+      word-wrap: break-word;
+    }
+  }
+}

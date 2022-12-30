@@ -39,9 +39,11 @@ export default function index({ restaurants, lat, lng, range, start }) {
 
         {/* ページネーション作る */}
         {NumberAllData !== 0 && (
-          <PageNationData.Provider value={PageNationDataValue}>
-            <PageNation />
-          </PageNationData.Provider>
+          <div>
+            <PageNationData.Provider value={PageNationDataValue}>
+              <PageNation />
+            </PageNationData.Provider>
+          </div>
         )}
       </div>
     </div>

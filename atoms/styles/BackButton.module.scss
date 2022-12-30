@@ -8,3 +8,19 @@
   font-size: large;
   margin: 10px;
 }
+@media screen and (max-width: 519px) {
+  .button {
+    color: #fff;
+    background-color: #eb6100;
+    width: 90px;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    margin: 0px 10px;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

@@ -26,12 +26,12 @@ const PageNation = () => {
   return (
     <ReactPaginate
       pageCount={Math.ceil(NumberAllData / NumberDisplayData)} //総ページ数。今回は一覧表示したいデータ数 / 1ページあたりの表示数としてます。
-      marginPagesDisplayed={3} //先頭と末尾に表示するページの数。今回は2としたので1,2…今いるページの前後…後ろから2番目, 1番目 のように表示されます。
-      pageRangeDisplayed={5} //上記の「今いるページの前後」の番号をいくつ表示させるかを決めます。
+      marginPagesDisplayed={2} //先頭と末尾に表示するページの数。今回は2としたので1,2…今いるページの前後…後ろから2番目, 1番目 のように表示されます。
+      pageRangeDisplayed={3} //上記の「今いるページの前後」の番号をいくつ表示させるかを決めます。
       onPageChange={pageChange} //ページネーションのリンクをクリックしたときのイベント(詳しくは下で解説します)
       previousLabel={'<'}
       nextLabel={'>'}
-      breakLabel={'. . . '}
+      breakLabel={'...'}
       containerClassName={styles.pagination} // ページネーションであるulに着くクラス名
       subContainerClassName={styles.pagination}
       activeClassName={styles.active} // アクティブなページのliに着くクラス名
