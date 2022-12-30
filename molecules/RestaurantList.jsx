@@ -20,6 +20,7 @@ const RestaurantList = () => {
                   width={200}
                   height={200}
                   className={style.img}
+                  priority={true}
                 />
 
                 <div className={style.text}>

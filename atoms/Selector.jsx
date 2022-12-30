@@ -36,6 +36,7 @@ const Selector = () => {
         options={options}
         defaultValue={selectedValue}
         styles={customStyles}
+        instanceId="selectbox"
         onChange={(value) => {
           value ? setSelectedValue(value) : null;
         }}

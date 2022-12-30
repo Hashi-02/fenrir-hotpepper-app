@@ -7,7 +7,7 @@ export const PageNationData = React.createContext();
 export const RestaurantListData = React.createContext();
 
 export default function index({ restaurants, lat, lng, range, start }) {
-  console.log(restaurants.results.results_returned);
+  // console.log(restaurants.results.results_returned);
   const NumberDisplayData = parseInt(15);
   const DisplayStart = parseInt(start);
   const DisplayEnd =

@@ -13,6 +13,7 @@ const DetailInfo = () => {
           width={200}
           height={200}
           className={style.img}
+          priority={true}
         />
         <div>
           <h2>{shop.name}</h2>
