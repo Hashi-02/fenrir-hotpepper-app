@@ -5,11 +5,13 @@ import style from './styles/detailInfo.module.scss';
 export const DetailInfoData = React.createContext();
 
 export default function restaurantDetailInfo({ restaurantDetailInfo }) {
+  console.log(restaurantDetailInfo);
   const shop = {
     name: restaurantDetailInfo.results.shop[0].name,
     address: restaurantDetailInfo.results.shop[0].address,
     businessHours: restaurantDetailInfo.results.shop[0].open,
     picSrc: restaurantDetailInfo.results.shop[0].photo.pc.l,
+    url: restaurantDetailInfo.results.shop[0].urls.pc,
   };
   const DetailInfoDataValue = {
     shop,
