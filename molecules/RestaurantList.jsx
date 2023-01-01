@@ -24,9 +24,19 @@ const RestaurantList = () => {
                 />
 
                 <div className={style.text}>
-                  {/* <p className={style.name}>{restaurant.name}</p> */}
                   <h2 className={style.name}>{restaurant.name}</h2>
+                  <p className={style.access}>
+                    {restaurant.genre.name} : {restaurant.genre.catch}
+                  </p>
                   <p className={style.access}>{restaurant.access}</p>
+                  {restaurant.budget.name && (
+                    <p className={style.access}>
+                      価格帯:{restaurant.budget.name}
+                    </p>
+                  )}
+
+                  <p className={style.access}>カード:{restaurant.card}</p>
+                  <p className={style.access}>駐車場:{restaurant.parking}</p>
                 </div>
               </div>
             </Link>
