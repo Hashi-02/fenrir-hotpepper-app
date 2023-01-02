@@ -20,7 +20,7 @@ export default function restaurantDetailInfo({
     parking: restaurantDetailInfo.results.shop[0].parking,
     picSrc: restaurantDetailInfo.results.shop[0].photo.pc.l,
     hotpepperUrl: restaurantDetailInfo.results.shop[0].urls.pc,
-    googleMapUrl: `https://www.google.com/maps/dir/?api=1&destination=${restaurantDetailInfo.results.shop[0].name}&travelmode=walking`,
+    googleMapUrl: `https://www.google.com/maps/dir/?api=1&destination=${restaurantDetailInfo.results.shop[0].address}&travelmode=walking`,
     duration: DirectionInfo.routes[0].legs[0].duration.text,
     distance: DirectionInfo.routes[0].legs[0].distance.text,
   };
