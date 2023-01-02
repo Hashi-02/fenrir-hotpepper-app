@@ -20,8 +20,12 @@ const DetailInfo = () => {
           <h2>{shop.name}</h2>
           <p>{shop.address}</p>
           <p>{shop.businessHours}</p>
-          <Link href={shop.url} target="_blank">
+          <Link href={shop.hotpepperUrl} target="_blank">
             ホットペッパーで見る
+          </Link>
+          <br />
+          <Link href={shop.googleMapUrl} target="_blank">
+            ここに行く(mapに移動)
           </Link>
         </div>
       </div>
