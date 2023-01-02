@@ -45,7 +45,6 @@ const RestaurantList = () => {
                 </div>
               </div>
             </Link>
-            {/* <br /> */}
           </div>
         );
       })}

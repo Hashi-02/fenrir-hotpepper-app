@@ -62,7 +62,7 @@ export async function getServerSideProps(context) {
   const apiBaseUrl = process.env.API_URL_ROOT;
 
   const res = await fetch(
-    `${apiBaseUrl}&lat=34.7055051&lng=135.4983028&range=${range}&start=${start}&count=${count}`
+    `${apiBaseUrl}&lat=${lat}&lng=${lng}&range=${range}&start=${start}&count=${count}`
   );
   const restaurants = await res.json();
   return { props: { restaurants, lat, lng, range, start } };

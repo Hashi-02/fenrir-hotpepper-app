@@ -1,0 +1,29 @@
+.button {
+  color: #fff;
+  background-color: #eb6100;
+  width: auto;
+  height: 45px;
+  border-radius: 10px;
+  border: none;
+  font-size: large;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+@media screen and (max-width: 519px) {
+  .button {
+    color: #fff;
+    background-color: #eb6100;
+    width: auto;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    margin: 5px 10px;
+    padding: 10px;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
