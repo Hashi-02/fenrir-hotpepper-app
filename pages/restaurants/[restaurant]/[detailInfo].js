@@ -5,11 +5,14 @@ import style from './styles/detailInfo.module.scss';
 export const DetailInfoData = React.createContext();
 
 export default function restaurantDetailInfo({ restaurantDetailInfo }) {
+  console.log(restaurantDetailInfo);
   const shop = {
     name: restaurantDetailInfo.results.shop[0].name,
     address: restaurantDetailInfo.results.shop[0].address,
     businessHours: restaurantDetailInfo.results.shop[0].open,
     picSrc: restaurantDetailInfo.results.shop[0].photo.pc.l,
+    hotpepperUrl: restaurantDetailInfo.results.shop[0].urls.pc,
+    googleMapUrl: `https://www.google.com/maps/dir/?api=1&destination=${restaurantDetailInfo.results.shop[0].name}&travelmode=walking`,
   };
   const DetailInfoDataValue = {
     shop,
@@ -29,8 +32,12 @@ export default function restaurantDetailInfo({ restaurantDetailInfo }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
-  const id = params.detailInfo;
+export async function getServerSideProps(context) {
+  console.log(context.query);
+  const lat = context.query.lat;
+  const lng = context.query.lng;
+  const id = context.query.id;
+
   const apiBaseUrl = process.env.API_URL_ROOT;
   const res = await fetch(`${apiBaseUrl}&id=${id}`);
   const restaurantDetailInfo = await res.json();
@@ -40,5 +47,5 @@ export async function getServerSideProps({ params }) {
       notFound: true,
     };
   }
-  return { props: { restaurantDetailInfo } };
+  return { props: { restaurantDetailInfo, lat, lng } };
 }

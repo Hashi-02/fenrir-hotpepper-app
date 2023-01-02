@@ -22,6 +22,8 @@ export default function index({ restaurants, lat, lng, range, start }) {
   };
   const RestaurantListDataValue = {
     restaurants,
+    lat,
+    lng,
   };
 
   return (
