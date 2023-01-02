@@ -18,7 +18,7 @@ const DetailInfo = () => {
           priority={true}
         />
         <div>
-          <h2>{shop.name}</h2>
+          <h1>{shop.name}</h1>
           <p>{shop.genre}</p>
           <p>{shop.catch}</p>
           <p>営業時間:{shop.businessHours}</p>
