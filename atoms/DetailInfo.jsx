@@ -18,11 +18,19 @@ const DetailInfo = () => {
         />
         <div>
           <h2>{shop.name}</h2>
-          <p>{shop.address}</p>
-          <p>{shop.businessHours}</p>
+          <p>{shop.genre}</p>
+          <p>{shop.catch}</p>
+          <p>営業時間:{shop.businessHours}</p>
+          <p>お休み:{shop.close}</p>
           <p>
             現在地から徒歩{shop.duration}({shop.distance})
           </p>
+
+          <p>平均予算:{shop.budget}</p>
+
+          <p>{shop.address}</p>
+          <p>カード:{shop.card}</p>
+          <p>駐車場:{shop.parking}</p>
           <Link href={shop.hotpepperUrl} target="_blank">
             ホットペッパーで見る
           </Link>

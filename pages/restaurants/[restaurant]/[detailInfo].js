@@ -12,6 +12,12 @@ export default function restaurantDetailInfo({
     name: restaurantDetailInfo.results.shop[0].name,
     address: restaurantDetailInfo.results.shop[0].address,
     businessHours: restaurantDetailInfo.results.shop[0].open,
+    close: restaurantDetailInfo.results.shop[0].close,
+    budget: restaurantDetailInfo.results.shop[0].budget.name,
+    catch: restaurantDetailInfo.results.shop[0].catch,
+    card: restaurantDetailInfo.results.shop[0].card,
+    genre: restaurantDetailInfo.results.shop[0].genre.catch,
+    parking: restaurantDetailInfo.results.shop[0].parking,
     picSrc: restaurantDetailInfo.results.shop[0].photo.pc.l,
     hotpepperUrl: restaurantDetailInfo.results.shop[0].urls.pc,
     googleMapUrl: `https://www.google.com/maps/dir/?api=1&destination=${restaurantDetailInfo.results.shop[0].name}&travelmode=walking`,
@@ -21,7 +27,7 @@ export default function restaurantDetailInfo({
   const DetailInfoDataValue = {
     shop,
   };
-  // console.log(restaurantDetailInfo);
+
   return (
     <div className={style.wrapper}>
       <div>
@@ -37,7 +43,6 @@ export default function restaurantDetailInfo({
 }
 
 export async function getServerSideProps(context) {
-  console.log(context.query);
   const lat = context.query.lat;
   const lng = context.query.lng;
   const id = context.query.id;
