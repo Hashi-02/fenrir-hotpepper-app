@@ -3,6 +3,7 @@ import { DetailInfoData } from '../pages/restaurants/[restaurant]/[detailInfo]';
 import Image from 'next/image';
 import style from './styles/DetailInfo.module.scss';
 import Link from 'next/link';
+import DefaultButton from './DefaultButton';
 const DetailInfo = () => {
   const { shop } = useContext(DetailInfoData);
   return (
@@ -31,13 +32,8 @@ const DetailInfo = () => {
           <p>{shop.address}</p>
           <p>カード:{shop.card}</p>
           <p>駐車場:{shop.parking}</p>
-          <Link href={shop.hotpepperUrl} target="_blank">
-            ホットペッパーで見る
-          </Link>
-          <br />
-          <Link href={shop.googleMapUrl} target="_blank">
-            ここに行く(mapに移動)
-          </Link>
+          <DefaultButton url={shop.hotpepperUrl} text="ホットペッパーで見る" />
+          <DefaultButton url={shop.googleMapUrl} text="ここに行く(mapに移動)" />
         </div>
       </div>
     </div>
