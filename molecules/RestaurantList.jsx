@@ -6,13 +6,18 @@ import Image from 'next/image';
 import style from './styles/RestaurantList.module.scss';
 
 const RestaurantList = () => {
-  const { restaurants } = useContext(RestaurantListData);
+  const { restaurants, lat, lng } = useContext(RestaurantListData);
   return (
     <div>
       {restaurants.results.shop.map((restaurant) => {
         return (
           <div key={restaurant.id}>
-            <Link href={`/restaurants/detail/${restaurant.id}`}>
+            <Link
+              href={{
+                pathname: `/restaurants/detail/${restaurant.id}`,
+                query: { id: restaurant.id, lat: lat, lng: lng },
+              }}
+            >
               <div className={style.container}>
                 <Image
                   src={restaurant.photo.pc.l}
