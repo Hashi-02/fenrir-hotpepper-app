@@ -1,7 +1,7 @@
 import React from 'react';
 import BackButton from '../../../atoms/BackButton';
 import DetailInfo from '../../../atoms/DetailInfo';
-import style from './styles/detailInfo.module.scss';
+import styles from './styles/detailInfo.module.scss';
 export const DetailInfoData = React.createContext();
 
 export default function restaurantDetailInfo({
@@ -29,7 +29,7 @@ export default function restaurantDetailInfo({
   };
 
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <div>
         <BackButton />
       </div>

@@ -1,20 +1,20 @@
 import React, { useContext } from 'react';
 import { DetailInfoData } from '../pages/restaurants/[restaurant]/[detailInfo]';
 import Image from 'next/image';
-import style from './styles/DetailInfo.module.scss';
+import styles from './styles/DetailInfo.module.scss';
 import Link from 'next/link';
 import DefaultButton from './DefaultButton';
 const DetailInfo = () => {
   const { shop } = useContext(DetailInfoData);
   return (
-    <div className={style.wrapper}>
-      <div className={style.container}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
         <Image
           src={shop.picSrc}
           alt="Picture of the author"
           width={200}
           height={200}
-          className={style.img}
+          className={styles.img}
           priority={true}
         />
         <div>

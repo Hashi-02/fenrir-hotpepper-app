@@ -1,7 +1,7 @@
 import React from 'react';
 import PageNation from '../../atoms/PageNation';
 import RestaurantList from '../../molecules/RestaurantList';
-import style from './styles/index.module.scss';
+import styles from './styles/index.module.scss';
 
 export const PageNationData = React.createContext();
 export const RestaurantListData = React.createContext();
@@ -27,12 +27,12 @@ export default function index({ restaurants, lat, lng, range, start }) {
   };
 
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <h1>周辺のレストラン</h1>
       <h3>
         {DisplayStart} ~ {DisplayEnd}件を表示 / {NumberAllData}件の検索結果
       </h3>
-      <div className={style.container}>
+      <div className={styles.container}>
         <div>
           <RestaurantListData.Provider value={RestaurantListDataValue}>
             <RestaurantList />
