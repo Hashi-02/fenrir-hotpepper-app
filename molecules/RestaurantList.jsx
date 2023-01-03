@@ -28,20 +28,17 @@ const RestaurantList = () => {
                   priority={true}
                 />
 
-                <div className={style.text}>
+                <div>
+                  <p className={style.catch}>{restaurant.genre.catch}</p>
                   <h2 className={style.name}>{restaurant.name}</h2>
-                  <p className={style.access}>
-                    {restaurant.genre.name} : {restaurant.genre.catch}
+                  <p className={style.text}>
+                    {restaurant.genre.name} / {restaurant.access}
                   </p>
-                  <p className={style.access}>{restaurant.access}</p>
                   {restaurant.budget.name && (
-                    <p className={style.access}>
-                      価格帯:{restaurant.budget.name}
-                    </p>
+                    <p className={style.text}>¥{restaurant.budget.name}</p>
                   )}
-
-                  <p className={style.access}>カード:{restaurant.card}</p>
-                  <p className={style.access}>駐車場:{restaurant.parking}</p>
+                  <p className={style.text}>カード:{restaurant.card}</p>
+                  <p className={style.text}>駐車場:{restaurant.parking}</p>
                 </div>
               </div>
             </Link>

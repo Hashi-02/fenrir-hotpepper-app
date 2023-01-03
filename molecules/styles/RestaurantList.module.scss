@@ -17,12 +17,20 @@
       color: #eb6100;
     }
   }
-  .access {
+  .text {
     font-size: large;
     color: rgb(59, 59, 59);
     margin: 0;
     width: 850px;
     word-wrap: break-word;
+  }
+  .catch {
+    font-size: large;
+    color: #eb6100;
+    margin: 0;
+    width: 850px;
+    word-wrap: break-word;
+    font-weight: bold;
   }
 }
 @media screen and (max-width: 519px) {
@@ -40,7 +48,7 @@
     }
     .name {
       color: rgb(59, 59, 59);
-      margin: 0;
+      margin: 0 auto;
       width: 300px;
       line-height: 30px;
       word-wrap: break-word;
@@ -48,13 +56,21 @@
         color: #eb6100;
       }
     }
-    .access {
+    .text {
       font-size: large;
       color: rgb(59, 59, 59);
-      margin: 0;
+      margin: 0 auto;
       line-height: 20px;
       width: 300px;
       word-wrap: break-word;
+    }
+    .catch {
+      font-size: large;
+      color: #eb6100;
+      margin: 0;
+      width: 350px;
+      word-wrap: break-word;
+      font-weight: bold;
     }
   }
 }
