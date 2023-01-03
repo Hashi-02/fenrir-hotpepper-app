@@ -4,7 +4,7 @@ export default function Footer() {
     <div className={styles.wrapper}>
       <div className={styles.inner}>
         <p>GPSグルメサーチ</p>
-        <p className={styles.copyright}>Copyright </p>
+        <p className={styles.copyright}>&copy;2022-2023 HashinoYuto </p>
       </div>
     </div>
   );
