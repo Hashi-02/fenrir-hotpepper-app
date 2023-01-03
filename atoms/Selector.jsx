@@ -1,5 +1,5 @@
 import React from 'react';
-import { RangeData } from '../organism/header';
+import { RangeData } from '../molecules/header';
 import { useContext } from 'react';
 import Select from 'react-select';
 import styles from './styles/Selector.module.scss';
@@ -9,7 +9,7 @@ const Selector = () => {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
-      //ここでボックスの中身のスタイルをカスタマイズ
+      //ボックスの中身のスタイル
       borderBottom: '1px solid rgb(221, 221, 221)',
       color: state.isSelected ? '#eb6100' : 'gray',
       backgroundColor: 'white',
@@ -17,8 +17,7 @@ const Selector = () => {
       textAlign: 'center',
     }),
     control: () => ({
-      // none of react-select's styles are passed to <Control />
-      //ここでボックス自体のスタイルをカスタマイズ
+      //ボックスのスタイル
       width: 200,
       display: 'flex',
       textAlign: 'center',
@@ -26,7 +25,6 @@ const Selector = () => {
     singleValue: (provided, state) => {
       const opacity = state.isDisabled ? 0.5 : 1;
       const transition = 'opacity 1000ms';
-
       return { ...provided, opacity, transition };
     },
   };

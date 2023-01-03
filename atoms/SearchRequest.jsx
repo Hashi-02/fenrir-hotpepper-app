@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { SearchRequestData } from '../organism/header';
+import { SearchRequestData } from '../molecules/header';
 import { useRouter } from 'next/router';
 import styles from './styles/SearchRequest.module.scss';
 const errorMessage = {
@@ -13,13 +13,14 @@ const SearchRequest = () => {
   const { isLoading, setIsLoading, selectedValue } =
     useContext(SearchRequestData);
   const router = useRouter();
+  //現在地を取得してリダイレクトする
   const getCurrentPosition = () => {
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setIsLoading(false);
         router.push({
-          pathname: '/restaurants', //URL
+          pathname: '/restaurants',
           query: {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
@@ -27,9 +28,10 @@ const SearchRequest = () => {
             start: 1,
             count: 15,
             page: 1,
-          }, //検索クエリ
+          },
         });
       },
+      //現在地を取得できなかった場合エラーを出力する。
       (err) => {
         console.log(err.code);
         alert(errorMessage[err.code]);

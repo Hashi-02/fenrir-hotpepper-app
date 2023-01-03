@@ -1,7 +1,7 @@
 import React from 'react';
 import BackButton from '../../../atoms/BackButton';
-import DetailInfo from '../../../atoms/DetailInfo';
-import style from './styles/detailInfo.module.scss';
+import DetailInfo from '../../../molecules/DetailInfo';
+import styles from './styles/detailInfo.module.scss';
 export const DetailInfoData = React.createContext();
 
 export default function restaurantDetailInfo({
@@ -29,7 +29,7 @@ export default function restaurantDetailInfo({
   };
 
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <div>
         <BackButton />
       </div>
@@ -45,16 +45,14 @@ export default function restaurantDetailInfo({
 export async function getServerSideProps(context) {
   const lat = context.query.lat;
   const lng = context.query.lng;
-  const id = context.query.id;
+  const id = context.params.detailInfo;
   const apiBaseUrl = process.env.API_URL_ROOT;
   const googleMapAPIKEY = process.env.GOOGLE_MAP_API_KEY;
+  //hotpepperグルメAPIの店舗詳細
   const res = await fetch(`${apiBaseUrl}&id=${id}`);
   const restaurantDetailInfo = await res.json();
-  if (!Object.keys(restaurantDetailInfo).length) {
-    return {
-      notFound: true,
-    };
-  }
+
+  //GoogleMapAPIのDirectionAPI
   const DirectionAPIref = await fetch(
     `https://maps.googleapis.com/maps/api/directions/json?origin=${lat},${lng}&destination=${restaurantDetailInfo.results.shop[0].address}&mode=walking&language=ja&key=${googleMapAPIKEY}`
   );

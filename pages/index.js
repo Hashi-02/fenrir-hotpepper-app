@@ -1,7 +1,7 @@
-import style from './styles/index.module.scss';
+import styles from './styles/index.module.scss';
 export default function Home() {
   return (
-    <div className={style.wrapper}>
+    <div className={styles.wrapper}>
       <h1>周辺のレストラン</h1>
     </div>
   );

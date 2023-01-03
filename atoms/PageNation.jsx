@@ -20,15 +20,15 @@ const PageNation = () => {
         start: selectedPage * NumberDisplayData + 1,
         count: NumberDisplayData,
         page: selectedPage + 1,
-      }, //検索クエリ
+      },
     });
   };
   return (
     <ReactPaginate
-      pageCount={Math.ceil(NumberAllData / NumberDisplayData)} //総ページ数。今回は一覧表示したいデータ数 / 1ページあたりの表示数としてます。
-      marginPagesDisplayed={2} //先頭と末尾に表示するページの数。今回は2としたので1,2…今いるページの前後…後ろから2番目, 1番目 のように表示されます。
-      pageRangeDisplayed={3} //上記の「今いるページの前後」の番号をいくつ表示させるかを決めます。
-      onPageChange={pageChange} //ページネーションのリンクをクリックしたときのイベント(詳しくは下で解説します)
+      pageCount={Math.ceil(NumberAllData / NumberDisplayData)} //総ページ数
+      marginPagesDisplayed={2} //先頭と末尾に表示するページの数
+      pageRangeDisplayed={3} //今いるページの前後の番号表示
+      onPageChange={pageChange} //ページネーションのリンクをクリックしたときのイベント
       previousLabel={'<'}
       nextLabel={'>'}
       breakLabel={'...'}
