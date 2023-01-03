@@ -2,18 +2,30 @@
   .container {
     display: flex;
     flex-direction: row;
+    margin: 10px;
   }
   .img {
     border-radius: 20px;
     margin-right: 10px;
   }
-  h2 {
+  h1 {
     padding: 0;
     margin: 0;
+    color: #eb6100;
   }
   p {
     padding: 0;
     margin: 0;
+  }
+  .genre {
+    color: #eb6100;
+    font-weight: bold;
+  }
+  .buttons {
+    display: flex;
+  }
+  .duration {
+    font-weight: bold;
   }
 }
 
@@ -31,13 +43,26 @@
       margin-right: 0px;
       margin: 0 auto;
     }
-    h2 {
+    h1 {
       padding: 0;
       margin: 0;
+      color: #eb6100;
+      line-height: 40px;
     }
     p {
       padding: 0;
       margin: 0;
+    }
+    .genre {
+      color: #eb6100;
+      font-weight: bold;
+    }
+    .buttons {
+      display: flex;
+      margin: 10px 0px;
+    }
+    .duration {
+      font-weight: bold;
     }
   }
 }
