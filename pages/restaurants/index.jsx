@@ -53,6 +53,8 @@ export default function index({ restaurants, lat, lng, range, start }) {
 export async function getServerSideProps(context) {
   const lat = context.query.lat;
   const lng = context.query.lng;
+  // const lat = 34.7055051;
+  // const lng = 135.4983028;
   const range = context.query.range;
   const start = context.query.start;
 

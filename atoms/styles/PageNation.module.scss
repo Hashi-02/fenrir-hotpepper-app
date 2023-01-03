@@ -5,13 +5,12 @@
   padding: 0;
   padding-bottom: 30px;
   font-size: x-large;
-
+  color: rgb(75, 75, 75);
   & > li {
     margin: 0 12px;
 
     & > a {
       position: relative;
-
       width: 24px;
       height: 24px;
       outline: none;
