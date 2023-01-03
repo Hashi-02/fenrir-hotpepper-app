@@ -7,7 +7,6 @@ export const PageNationData = React.createContext();
 export const RestaurantListData = React.createContext();
 
 export default function index({ restaurants, lat, lng, range, start }) {
-  // console.log(restaurants.results.results_returned);
   const NumberDisplayData = parseInt(15);
   const DisplayStart = parseInt(start);
   const DisplayEnd =
@@ -39,7 +38,6 @@ export default function index({ restaurants, lat, lng, range, start }) {
           </RestaurantListData.Provider>
         </div>
 
-        {/* ページネーション作る */}
         {NumberAllData !== 0 && (
           <div>
             <PageNationData.Provider value={PageNationDataValue}>
@@ -60,7 +58,7 @@ export async function getServerSideProps(context) {
 
   const count = 15;
   const apiBaseUrl = process.env.API_URL_ROOT;
-
+  //hotpepperグルメAPI
   const res = await fetch(
     `${apiBaseUrl}&lat=${lat}&lng=${lng}&range=${range}&start=${start}&count=${count}`
   );

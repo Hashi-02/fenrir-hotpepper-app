@@ -15,7 +15,7 @@ const RestaurantList = () => {
             <Link
               href={{
                 pathname: `/restaurants/detail/${restaurant.id}`,
-                query: { id: restaurant.id, lat: lat, lng: lng },
+                query: { lat: lat, lng: lng },
               }}
             >
               <div className={styles.container}>
