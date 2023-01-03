@@ -47,5 +47,6 @@ GooleMapAPI Key の取得=> https://developers.google.com/maps
 5. アプリを起動する
 
 ```bash
+$ npm run build
 $ npm run start
 ```
